@@ -1,12 +1,12 @@
 <template>
 	<button
-		class="p-2 text-slate-600 hover:text-slate-800 dark:text-slate-300 dark:hover:text-slate-100 focus-visible:ring-2 focus-visible:ring-green-400 rounded-lg"
+		class="hover:bg-gray-200 dark:hover:bg-gray-600 px-2 block rounded md:bg-transparent dark:text-white"
 		@click="toggleDarkMode"
 	>
 		<svg
 			v-if="dark"
 			xmlns="http://www.w3.org/2000/svg"
-			class="h-6 w-6"
+			class="h-5 w-5"
 			viewBox="0 0 20 20"
 			fill="currentColor"
 		>
@@ -17,7 +17,7 @@
 		<svg
 			v-else
 			xmlns="http://www.w3.org/2000/svg"
-			class="h-6 w-6"
+			class="h-5 w-5"
 			viewBox="0 0 20 20"
 			fill="currentColor"
 		>

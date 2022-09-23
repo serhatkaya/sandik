@@ -1,5 +1,5 @@
 <template>
-	<div id="app" class="p-3">
+	<div id="app" class="p-3" :class="dark ? 'dark' : 'light'">
 		<Navbar />
 		<main
 			id="main-wrapper"
@@ -13,6 +13,8 @@
 <script>
 import Navbar from './partials/navbar/Navbar.vue';
 import Footer from './partials/footer/Footer.vue';
+import { mapGetters } from 'vuex';
+
 export default {
 	components: {
 		Navbar,
@@ -20,6 +22,9 @@ export default {
 	},
 	name: 'MasterComponent',
 	data: () => ({}),
+	computed: {
+		...mapGetters(['dark']),
+	},
 	methods: {},
 };
 </script>

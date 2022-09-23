@@ -12,6 +12,7 @@
 				<img
 					src="./../../../../assets/img/logo.svg"
 					class="mr-3 h-6 sm:h-9"
+					:class="{ 'filter-green': dark }"
 					alt="Sandik Logo"
 				/>
 				<span
@@ -22,7 +23,7 @@
 			<button
 				@click.prevent="open = !open"
 				type="button"
-				class="bg-gray-50 inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+				class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
 			>
 				<span class="sr-only">Toggle menu</span>
 				<svg
@@ -44,19 +45,21 @@
 				id="navbar-default"
 			>
 				<ul
-					class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+					class="flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white md:dark:bg-gray-800 dark:border-gray-700"
 				>
 					<li v-for="route in routes" :key="route.name">
 						<router-link
 							:to="{ name: route.name }"
 							class="block py-2 pr-4 pl-3 rounded md:bg-transparent md:p-0 dark:text-white"
 							:class="{
-								'bg-blue-700 text-white md:text-blue-700 ':
+								'bg-blue-700 text-white md:text-blue-700 md:dark:text-blue-300 ':
 									$route.name == route.name,
 							}"
 							>{{ route.navTitle }}</router-link
 						>
 					</li>
+
+					<li><DarkModeToggler /></li>
 				</ul>
 			</div>
 		</div>
@@ -64,13 +67,19 @@
 </template>
 <script>
 import { routes } from '../../../../router';
+import DarkModeToggler from '../utils/DarkModeToggler.vue';
+import { mapGetters } from 'vuex';
 export default {
+	components: { DarkModeToggler },
 	name: 'Navbar',
 	data: () => ({
 		open: false,
 		routes: routes,
 	}),
 	methods: {},
+	computed: {
+		...mapGetters(['dark']),
+	},
 	created() {},
 };
 </script>
