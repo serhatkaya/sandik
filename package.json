@@ -11,7 +11,7 @@
 		"postinstall": "electron-builder install-app-deps",
 		"postuninstall": "electron-builder install-app-deps",
 		"prepare": "husky install",
-		"pretty-quick": "pretty-quick"
+		"pretty-quick": "pretty-quick --staged"
 	},
 	"main": "background.js",
 	"dependencies": {
