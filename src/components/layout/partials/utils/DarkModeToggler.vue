@@ -1,5 +1,6 @@
 <template>
 	<button
+		id="dark-mode-toggler"
 		class="hover:bg-gray-200 dark:hover:bg-gray-600 px-2 block rounded md:bg-transparent dark:text-white"
 		@click="toggleDarkMode"
 	>

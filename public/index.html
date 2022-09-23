@@ -6,8 +6,30 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 		<link rel="icon" href="<%= BASE_URL %>favicon.ico" />
 		<title><%= htmlWebpackPlugin.options.title %></title>
+		<script>
+			window.onload = function () {
+				darkModeToggler();
+
+				document
+					.getElementById('dark-mode-toggler')
+					.addEventListener('click', function () {
+						darkModeToggler();
+					});
+				function darkModeToggler() {
+					if (
+						localStorage.getItem('theme') === 'dark' ||
+						(!('theme' in localStorage) &&
+							window.matchMedia('(prefers-color-scheme: dark)').matches)
+					) {
+						document.documentElement.classList.add('dark');
+					} else {
+						document.documentElement.classList.remove('dark');
+					}
+				}
+			};
+		</script>
 	</head>
-	<body>
+	<body class="dark:bg-gray-800 bg-gray-100">
 		<noscript>
 			<strong
 				>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
