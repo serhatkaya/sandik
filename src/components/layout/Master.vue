@@ -11,9 +11,8 @@
 	</div>
 </template>
 <script>
-import Navbar from './partials/navbar/Navbar.vue';
 import Footer from './partials/footer/Footer.vue';
-import { mapGetters } from 'vuex';
+import Navbar from './partials/navbar/Navbar.vue';
 
 export default {
 	components: {
@@ -22,9 +21,6 @@ export default {
 	},
 	name: 'MasterComponent',
 	data: () => ({}),
-	computed: {
-		...mapGetters(['dark']),
-	},
 	methods: {},
 };
 </script>
