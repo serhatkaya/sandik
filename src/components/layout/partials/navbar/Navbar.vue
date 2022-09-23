@@ -5,7 +5,7 @@
 		<div class="container flex flex-wrap justify-between items-center mx-auto">
 			<router-link
 				:to="{
-					name: 'home',
+					name: routes.home.name,
 				}"
 				class="flex items-center"
 			>
@@ -54,7 +54,7 @@
 								'bg-blue-700 text-white md:text-blue-700 ':
 									$route.name == route.name,
 							}"
-							>{{ route.title }}</router-link
+							>{{ route.navTitle }}</router-link
 						>
 					</li>
 				</ul>
@@ -63,22 +63,15 @@
 	</nav>
 </template>
 <script>
+import { routes } from '../../../../router';
 export default {
 	name: 'Navbar',
 	data: () => ({
 		open: false,
-		routes: [
-			{
-				title: 'Home',
-				name: 'home',
-			},
-			{
-				title: 'About',
-				name: 'about',
-			},
-		],
+		routes: routes,
 	}),
 	methods: {},
+	created() {},
 };
 </script>
 z
