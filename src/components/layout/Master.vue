@@ -1,9 +1,9 @@
 <template>
-	<div id="app" class="p-3">
+	<div id="app">
 		<Navbar />
 		<main
 			id="main-wrapper"
-			class="container mx-auto my-2 rounded p-4 bg-gray-200 dark:bg-gray-700 dark:text-white"
+			class="container-fluid mx-auto my-2 rounded p-4 bg-gray-200 dark:bg-gray-700 dark:text-white"
 		>
 			<router-view></router-view>
 		</main>
