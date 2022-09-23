@@ -1,6 +1,6 @@
 <template>
 	<nav
-		class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900"
+		class="container mx-auto bg-blue-100 shadow border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900"
 	>
 		<div class="container flex flex-wrap justify-between items-center mx-auto">
 			<router-link
@@ -22,7 +22,7 @@
 			<button
 				@click.prevent="open = !open"
 				type="button"
-				class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+				class="bg-gray-50 inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
 			>
 				<span class="sr-only">Toggle menu</span>
 				<svg

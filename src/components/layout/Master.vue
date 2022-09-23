@@ -1,7 +1,10 @@
 <template>
-	<div id="app">
+	<div id="app" class="p-3">
 		<Navbar />
-		<main id="main-wrapper" class="p-1">
+		<main
+			id="main-wrapper"
+			class="container mx-auto my-2 rounded p-4 bg-gray-100"
+		>
 			<router-view></router-view>
 		</main>
 		<Footer />
