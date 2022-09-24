@@ -12,7 +12,7 @@
 				class="flex items-center"
 			>
 				<img
-					src="@/assets/img/logo.svg"
+					src="@r/assets/img/logo.svg"
 					class="mr-3 h-6 sm:h-9"
 					:class="{ 'filter-green': dark }"
 					alt="Sandik Logo"
@@ -68,7 +68,7 @@
 	</nav>
 </template>
 <script>
-import { routes } from '@/router';
+import { routes } from '@r/router';
 import DarkModeToggler from '../utils/DarkModeToggler.vue';
 import { mapGetters } from 'vuex';
 export default {
